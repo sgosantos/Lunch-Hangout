@@ -3,6 +3,7 @@ package com.liferay.hackaday.lunchhangout.service;
 import com.google.gson.JsonElement;
 import com.liferay.hackaday.lunchhangout.model.AuthToken;
 import com.liferay.hackaday.lunchhangout.model.Place;
+import com.liferay.hackaday.lunchhangout.model.Poll;
 import com.liferay.hackaday.lunchhangout.model.User;
 
 import java.util.List;
@@ -13,13 +14,20 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
-import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 
 /**
  * @author Silvio Santos
  */
 public interface LunchHangout {
+
+	@Headers("Host: data.lunchhangout.wedeploy.me")
+	@FormUrlEncoded
+	@POST("polls")
+	Call<Poll> createPoll(
+		@Field("restaurantName") String restaurantName,
+		@Field("votes") String[] userName,
+		@Field("time")  String time);
 
 	@Headers("Host: auth.lunchhangout.wedeploy.me")
 	@GET("user")

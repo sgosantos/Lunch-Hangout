@@ -19,7 +19,7 @@ import com.google.gson.JsonElement;
 /**
  * @author Igor Oliveira
  */
-public class Pool {
+public class Poll {
 
 	public String getRestaurantName() {
 		return restaurantName;
