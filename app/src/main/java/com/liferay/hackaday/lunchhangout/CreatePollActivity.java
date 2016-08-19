@@ -29,7 +29,7 @@ public class CreatePollActivity extends AppCompatActivity {
 		binding = DataBindingUtil.setContentView(this, R.layout.activity_create_poll);
 		binding.setPresenter(this);
 
-		String array[] = {"11:00", "11:30", "12", "12:30"};
+		String array[] = {"11:00", "11:30", "12", "12:30", "13h"};
 
 		ArrayAdapter<String> adapter =
 		new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, array);
@@ -49,6 +49,7 @@ public class CreatePollActivity extends AppCompatActivity {
 			@Override
 			public void onResponse(Call<Poll> call, Response<Poll> response) {
 				Log.i(TAG, "onResponse: createPoll()");
+				finish();
 			}
 
 			@Override
