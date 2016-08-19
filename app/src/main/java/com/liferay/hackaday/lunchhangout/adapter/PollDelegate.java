@@ -79,7 +79,7 @@ public class PollDelegate implements AdapterDelegate<List> {
 			name.setText(poll.getRestaurantName());
 			time.setText(poll.getTime());
 
-			this.votes.setText(poll.getVotesCount());
+			votes.setText(poll.getVotesCount());
 		}
 
 	}
