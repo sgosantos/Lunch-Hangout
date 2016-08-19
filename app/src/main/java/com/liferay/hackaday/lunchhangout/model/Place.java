@@ -1,5 +1,7 @@
 package com.liferay.hackaday.lunchhangout.model;
 
+import com.google.gson.JsonElement;
+
 import org.json.JSONArray;
 
 /**
@@ -16,11 +18,11 @@ public class Place {
 	private String price;
 	private String restaurantType;
 
-	public JSONArray getGeolocation() {
+	public JsonElement getGeolocation() {
 		return geolocation;
 	}
 
-	public void setGeolocation(JSONArray geolocation) {
+	public void setGeolocation(JsonElement geolocation) {
 		this.geolocation = geolocation;
 	}
 
@@ -80,7 +82,7 @@ public class Place {
 		this.restaurantType = restaurantType;
 	}
 
-	private JSONArray geolocation;
+	private JsonElement geolocation;
 
 	public long getId() {
 		return id;

@@ -75,7 +75,7 @@ public class PlaceDelegate implements AdapterDelegate<List> {
 		}
 
 		public void bind(final Place place) {
-			name.setText(String.valueOf(place.getId()));
+			name.setText(String.valueOf(place.getName()));
 
 			itemView.setOnClickListener(new View.OnClickListener() {
 				@Override
