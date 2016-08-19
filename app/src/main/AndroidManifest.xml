@@ -10,6 +10,7 @@
 		android:label="@string/app_name"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
+
 		<activity android:name=".SignInActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
@@ -21,6 +22,13 @@
 		<activity
 			android:name=".MainActivity"
 			android:label="Lunch Hangouts"/>
+
+		<activity
+			android:name=".DetailActivity"
+			android:label="@string/title_activity_detail"
+			android:theme="@style/AppTheme">
+		</activity>
+
 
 		<activity android:name=".CreatePollActivity" />
 

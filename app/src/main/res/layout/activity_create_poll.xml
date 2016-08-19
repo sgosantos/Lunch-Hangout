@@ -5,8 +5,10 @@
 	xmlns:tools="http://schemas.android.com/tools">
 
 	<data>
-		<variable name="presenter" type="com.liferay.hackaday.lunchhangout.CreatePollActivity"/>
+		<variable name="presenter"
+			type="com.liferay.hackaday.lunchhangout.CreatePollActivity"/>
 	</data>
+
 	<android.support.design.widget.CoordinatorLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent">
@@ -43,8 +45,8 @@
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:orientation="vertical"
 			android:onClick="@{presenter::placeAction}"
+			android:orientation="vertical"
 			app:layout_behavior="@string/appbar_scrolling_view_behavior"
 			tools:context="com.liferay.hackaday.lunchhangout.CreatePollActivity">
 
@@ -102,7 +104,6 @@
 				android:layout_height="1dp"
 				android:background="@color/colorPrimaryDark"/>
 
-
 			<LinearLayout
 				android:id="@+id/confirm_layout"
 				android:layout_width="match_parent"
@@ -114,8 +115,6 @@
 					android:layout_height="match_parent"
 					android:text="I wanna go to this hangout"
 					android:textAllCaps="true"/>
-
-
 			</LinearLayout>
 
 

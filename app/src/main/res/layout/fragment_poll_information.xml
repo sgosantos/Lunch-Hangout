@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:paddingLeft="10dp"
+	android:paddingRight="10dp"
+	android:paddingTop="15dp"
+	tools:context="com.liferay.hackaday.lunchhangout.PollInformationFragment">
+
+	<TextView
+		android:id="@+id/place_description"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Decorado do mesmo jeitinho das casas do sertão, com tijolo aparente,cerca de vara de marmelo, móveis rústicos e panelas de barro, o Parraxaxá resgata a tradição da culinária típica nordestina servindo as delícias da cozinha regional no sistema de buffet por quilo, sendo uma excelente opção para os que desejam conhecer um pouco da culinária local."/>
+
+	<LinearLayout
+		android:id="@+id/liferay_off"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:orientation="horizontal">
+
+		<ImageView
+			android:layout_width="28dp"
+			android:layout_height="28dp"
+			android:layout_gravity="center_vertical"
+			android:src="@drawable/ic_star"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_marginLeft="10dp"
+			android:text="Desconto Liferay - 10%"
+			android:textSize="18dp"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:orientation="horizontal">
+
+		<ImageView
+			android:layout_width="28dp"
+			android:layout_height="28dp"
+			android:layout_gravity="center_vertical"
+			android:src="@drawable/ic_payment"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_marginLeft="10dp"
+			android:text="Formas de pagamento"
+			android:textSize="18dp"/>
+
+	</LinearLayout>
+
+
+</LinearLayout>
