@@ -35,6 +35,7 @@
 				android:id="@+id/username"
 				android:layout_width="match_parent"
 				android:layout_height="50dp"
+				android:text="silvio.santos@liferay.com"
 				android:hint="Username"/>
 		</android.support.design.widget.TextInputLayout>
 
@@ -44,6 +45,7 @@
 			android:layout_height="wrap_content">
 			<com.xwray.passwordview.PasswordView
 				android:id="@+id/password"
+				android:text="test"
 				android:layout_width="match_parent"
 				android:layout_height="50dp"
 				android:hint="Password"/>

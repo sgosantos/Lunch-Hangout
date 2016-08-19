@@ -1,5 +1,6 @@
 package com.liferay.hackaday.lunchhangout;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public void onCreateClick(View view) {
-		Toast.makeText(
-			MainActivity.this, "Click do add pool", Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(this, CreatePollActivity.class);
+		startActivity(intent);
 	}
 
 	@Override

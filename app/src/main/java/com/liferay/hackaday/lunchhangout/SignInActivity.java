@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.liferay.hackaday.lunchhangout.databinding.ActivitySignInBinding;
 import com.liferay.hackaday.lunchhangout.model.AuthToken;
 import com.liferay.hackaday.lunchhangout.service.LunchHangoutService;
 
