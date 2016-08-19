@@ -52,4 +52,8 @@ public interface LunchHangout {
 		@Field("password") String password,
 		@Field("grant_type") String grantType);
 
+	@Headers("Host: data.lunchhangout.wedeploy.me")
+	@GET("polls")
+	Call<List<Poll>> getPolls();
+
 }

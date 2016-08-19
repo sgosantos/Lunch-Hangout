@@ -37,16 +37,16 @@ public class Poll {
 		this.votes = votes;
 	}
 
-	public String getLunchTime() {
-		return lunchTime;
+	public String getTime() {
+		return time;
 	}
 
-	public void setLunchTime(String lunchTime) {
-		this.lunchTime = lunchTime;
+	public void setTime(String time) {
+		this.time = time;
 	}
 
 	private String restaurantName;
 	private JsonElement votes;
-	private String lunchTime;
+	private String time;
 
 }
