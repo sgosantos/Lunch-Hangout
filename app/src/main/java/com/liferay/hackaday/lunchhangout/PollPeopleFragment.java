@@ -10,8 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.liferay.hackaday.lunchhangout.adapter.PeopleAdapter;
 import com.liferay.hackaday.lunchhangout.adapter.PlaceAdapter;
+import com.liferay.hackaday.lunchhangout.model.Poll;
 import com.liferay.hackaday.lunchhangout.model.User;
 
 import java.util.ArrayList;
@@ -27,6 +30,16 @@ public class PollPeopleFragment extends Fragment {
 	RecyclerView recyclerView;
 	PeopleAdapter adapter;
 	List<User> peopleWhoVoted;
+
+	public static PollPeopleFragment create(Poll poll) {
+		PollPeopleFragment fragment = new PollPeopleFragment();
+		Bundle arguments = new Bundle();
+		arguments.putParcelable("poll", poll);
+
+		fragment.setArguments(arguments);
+
+		return fragment;
+	}
 
 	public PollPeopleFragment() {
         // Required empty public constructor
@@ -45,13 +58,20 @@ public class PollPeopleFragment extends Fragment {
 	    adapter = new PeopleAdapter(getActivity());
 	    recyclerView.setAdapter(adapter);
 
-//	    pegar lista de pessoas vontantes
-		User aux = new User("Silvio");
-		User aux1 = new User("Igor");
-
+		Poll poll = getArguments().getParcelable("poll");
+		JsonElement votes = poll.getVotes();
 		List<User> list = new ArrayList<>();
-		list.add(aux);
-		list.add(aux1);
+
+		if (votes != null) {
+			if (votes.isJsonArray()) {
+				for (JsonElement jsonElement : votes.getAsJsonArray()) {
+					list.add(new User(jsonElement.getAsString()));
+				}
+			}
+			else if (votes.isJsonPrimitive()) {
+				list.add(new User(votes.getAsString()));
+			}
+		}
 
 	    adapter.setEntries(list);
 

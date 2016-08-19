@@ -14,12 +14,38 @@
 
 package com.liferay.hackaday.lunchhangout.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 /**
  * @author Igor Oliveira
  */
-public class Poll {
+public class Poll implements Parcelable {
+
+	protected Poll(Parcel in) {
+		restaurantName = in.readString();
+		time = in.readString();
+
+		String votesString = in.readString();
+		if (votesString != null) {
+			votes = new JsonParser().parse(votesString);
+		}
+	}
+
+	public static final Creator<Poll> CREATOR = new Creator<Poll>() {
+		@Override
+		public Poll createFromParcel(Parcel in) {
+			return new Poll(in);
+		}
+
+		@Override
+		public Poll[] newArray(int size) {
+			return new Poll[size];
+		}
+	};
 
 	public String getRestaurantName() {
 		return restaurantName;
@@ -66,4 +92,18 @@ public class Poll {
 	private JsonElement votes;
 	private String time;
 
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel parcel, int i) {
+		parcel.writeString(restaurantName);
+		parcel.writeString(time);
+
+		if (votes != null) {
+			parcel.writeString(votes.toString());
+		}
+	}
 }

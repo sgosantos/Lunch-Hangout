@@ -14,6 +14,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 
 /**
@@ -55,5 +56,12 @@ public interface LunchHangout {
 	@Headers("Host: data.lunchhangout.wedeploy.me")
 	@GET("polls")
 	Call<List<Poll>> getPolls();
+
+	@Headers("Host: data.lunchhangout.wedeploy.me")
+	@FormUrlEncoded
+	@PATCH("polls")
+	Call<Poll> vote(
+		@Field("id") long id,
+		@Field("votes") String[] userName);
 
 }

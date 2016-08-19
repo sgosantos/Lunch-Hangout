@@ -15,14 +15,15 @@
 package com.liferay.hackaday.lunchhangout.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.google.gson.JsonElement;
 import com.hannesdorfmann.adapterdelegates2.AdapterDelegate;
+import com.liferay.hackaday.lunchhangout.DetailActivity;
 import com.liferay.hackaday.lunchhangout.R;
 import com.liferay.hackaday.lunchhangout.model.Poll;
 
@@ -58,6 +59,7 @@ public class PollDelegate implements AdapterDelegate<List> {
 		Poll poll = (Poll)items.get(position);
 
 		PoolViewHolder viewHolder = (PoolViewHolder)holder;
+
 		viewHolder.bind(poll);
 	}
 
@@ -75,11 +77,21 @@ public class PollDelegate implements AdapterDelegate<List> {
 			votes = (TextView) itemView.findViewById(R.id.votes);
 		}
 
-		public void bind(Poll poll) {
+		public void bind(final Poll poll) {
 			name.setText(poll.getRestaurantName());
 			time.setText(poll.getTime());
-
 			votes.setText(poll.getVotesCount());
+
+			itemView.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					Intent intent = new Intent(
+						view.getContext(), DetailActivity.class);
+
+					intent.putExtra("poll", poll);
+					view.getContext().startActivity(intent);
+				}
+			});
 		}
 
 	}

@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.liferay.hackaday.lunchhangout.model.Poll;
+
 public class DetailActivity extends AppCompatActivity {
 
 	/**
@@ -99,8 +101,9 @@ public class DetailActivity extends AppCompatActivity {
 				case 0:
 					return new PollInformationFragment();
 				default:
-					return new PollPeopleFragment();
+					Poll poll = getIntent().getExtras().getParcelable("poll");
 
+					return PollPeopleFragment.create(poll);
 			}
 		}
 
