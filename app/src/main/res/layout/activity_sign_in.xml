@@ -17,15 +17,18 @@
 		android:paddingLeft="@dimen/activity_horizontal_margin"
 		android:paddingRight="@dimen/activity_horizontal_margin"
 		android:paddingTop="@dimen/activity_vertical_margin"
+		android:background="@color/white"
 		tools:context="com.liferay.hackaday.lunchhangout.SignInActivity">
 
 		<TextView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:paddingBottom="20dp"
+			android:layout_marginBottom="36dp"
 			android:text="Lunch Hangouts"
 			android:textAlignment="center"
-			android:textSize="35dp"/>
+			android:textSize="38dp"
+			android:textColor="#263238"
+			android:textStyle="bold"/>
 
 		<android.support.design.widget.TextInputLayout
 			android:id="@+id/username_layout"
@@ -34,40 +37,47 @@
 			<EditText
 				android:id="@+id/username"
 				android:layout_width="match_parent"
-				android:layout_height="50dp"
+				android:layout_height="48dp"
+				android:textSize="16sp"
+				android:maxLines="1"
 				android:text="silvio.santos@liferay.com"
+				android:inputType="textEmailAddress"
 				android:hint="Username"/>
+
 		</android.support.design.widget.TextInputLayout>
 
 		<android.support.design.widget.TextInputLayout
 			android:id="@+id/password_layout"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="24dp">
 			<com.xwray.passwordview.PasswordView
 				android:id="@+id/password"
 				android:text="test"
 				android:layout_width="match_parent"
-				android:layout_height="50dp"
+				android:layout_height="48dp"
+				android:maxLines="1"
+				android:inputType="textPassword"
+				android:textSize="16sp"
 				android:hint="Password"/>
 		</android.support.design.widget.TextInputLayout>
 
 		<Button
 			android:layout_width="match_parent"
-			android:layout_height="50dp"
+			android:layout_height="60dp"
 			android:backgroundTint="@color/colorAccent"
 			android:onClick="@{presenter::loginClick}"
 			android:text="Login"
 			android:textAlignment="center"
 			android:textColor="@color/white"/>
 
-		<Button
+		<!-- <Button
 			android:layout_width="match_parent"
-			android:layout_height="50dp"
+			android:layout_height="60dp"
 			android:layout_gravity="bottom"
 			android:onClick="@{presenter::signUpClick}"
 			android:text="Create new account"
-			android:textAlignment="center"/>
-
+			android:textAlignment="center"/> -->
 
 	</LinearLayout>
 </layout>
