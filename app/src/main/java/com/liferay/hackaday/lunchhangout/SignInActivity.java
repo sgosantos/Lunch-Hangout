@@ -1,5 +1,6 @@
 package com.liferay.hackaday.lunchhangout;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,12 +18,11 @@ public class SignInActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in);
 		binding.setPresenter(this);
-
 	}
 
 	public void loginClick(View view) {
-//		click do login
-		Toast.makeText(SignInActivity.this, "Click do login", Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(this, MainActivity.class);
+		startActivity(intent);
 	}
 
 	public void signUpClick(View view) {
