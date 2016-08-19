@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.gson.JsonElement;
 import com.hannesdorfmann.adapterdelegates2.AdapterDelegate;
 import com.liferay.hackaday.lunchhangout.R;
 import com.liferay.hackaday.lunchhangout.model.Poll;
@@ -77,7 +78,8 @@ public class PollDelegate implements AdapterDelegate<List> {
 		public void bind(Poll poll) {
 			name.setText(poll.getRestaurantName());
 			time.setText(poll.getTime());
-			votes.setText("1");
+
+			this.votes.setText(poll.getVotesCount());
 		}
 
 	}

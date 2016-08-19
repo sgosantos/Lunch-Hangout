@@ -41,6 +41,23 @@ public class Poll {
 		return time;
 	}
 
+	public String getVotesCount() {
+		int votesCount = 0;
+
+		JsonElement votes = getVotes();
+
+		if  (votes != null) {
+			if (votes.isJsonPrimitive()) {
+				votesCount = 1;
+			}
+			else {
+				votesCount = votes.getAsJsonArray().size();
+			}
+		}
+
+		return String.valueOf(votesCount);
+	}
+
 	public void setTime(String time) {
 		this.time = time;
 	}
