@@ -10,7 +10,7 @@ public class LunchHangoutService {
 
 	public static LunchHangout getInstance() {
 		Retrofit retrofit = new Retrofit.Builder()
-			.baseUrl("http://192.168.108.103/")
+			.baseUrl("http://192.168.109.253/")
 			.addConverterFactory(GsonConverterFactory.create())
 			.build();
 

@@ -20,8 +20,8 @@ import retrofit2.http.POST;
 public interface LunchHangout {
 
 	@Headers("Host: data.lunchhangout.wedeploy.me")
-	@GET("places")
-	Call<List<Place>> getPlaces();
+	@GET("restaurants")
+	Call<List<Place>> restaurants();
 
 	@Headers("Host: auth.lunchhangout.wedeploy.me")
 	@FormUrlEncoded

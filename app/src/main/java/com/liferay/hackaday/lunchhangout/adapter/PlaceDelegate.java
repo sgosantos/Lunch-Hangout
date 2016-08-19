@@ -26,7 +26,9 @@ import android.widget.TextView;
 
 import com.hannesdorfmann.adapterdelegates2.AdapterDelegate;
 
+import com.liferay.hackaday.lunchhangout.listener.OnPlaceClickListener;
 import com.liferay.hackaday.lunchhangout.R;
+import com.liferay.hackaday.lunchhangout.model.Place;
 
 import java.util.List;
 
@@ -35,8 +37,11 @@ import java.util.List;
  */
 public class PlaceDelegate implements AdapterDelegate<List> {
 
-	public PlaceDelegate(Activity activity) {
+	private OnPlaceClickListener listener;
+
+	public PlaceDelegate(Activity activity, OnPlaceClickListener listener) {
 		inflater = activity.getLayoutInflater();
+		this.listener = listener;
 	}
 
 	@Override
@@ -49,7 +54,7 @@ public class PlaceDelegate implements AdapterDelegate<List> {
 		Place place = (Place)items.get(position);
 
 		PlaceViewHolder viewHolder = (PlaceViewHolder)holder;
-		viewHolder.setPlace(place);
+		viewHolder.bind(place);
 	}
 
 	@Override
@@ -69,8 +74,15 @@ public class PlaceDelegate implements AdapterDelegate<List> {
 			name = (TextView) itemView.findViewById(R.id.name);
 		}
 
-		public void setPlace(Place place) {
-			name.setText(place.getName());
+		public void bind(final Place place) {
+			name.setText(String.valueOf(place.getId()));
+
+			itemView.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					listener.onPlaceClick(place);
+				}
+			});
 		}
 	}
 

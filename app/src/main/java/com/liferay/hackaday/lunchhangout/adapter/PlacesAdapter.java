@@ -22,6 +22,7 @@ import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.ViewGroup;
 
 import com.hannesdorfmann.adapterdelegates2.AdapterDelegatesManager;
+import com.liferay.hackaday.lunchhangout.listener.OnPlaceClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,11 +32,11 @@ import java.util.List;
  */
 public class PlacesAdapter extends RecyclerView.Adapter {
 
-	public PlacesAdapter(Activity activity) {
+	public PlacesAdapter(Activity activity, OnPlaceClickListener listener) {
 		entries = new ArrayList<>();
 
 		delegatesManager = new AdapterDelegatesManager<>();
-		delegatesManager.addDelegate(new PlaceDelegate(activity));
+		delegatesManager.addDelegate(new PlaceDelegate(activity, listener));
 	}
 
 	public void addOnBottom(List newEntries) {

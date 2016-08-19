@@ -1,5 +1,7 @@
 package com.liferay.hackaday.lunchhangout;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +22,7 @@ public class CreatePollActivity extends AppCompatActivity {
 		binding = DataBindingUtil.setContentView(this, R.layout.activity_create_poll);
 		binding.setPresenter(this);
 
-		String array[] = {"11", "11:30", "12", "12:30"};
+		String array[] = {"11:00", "11:30", "12", "12:30"};
 
 		ArrayAdapter<String> adapter =
 		new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, array);
@@ -30,9 +32,18 @@ public class CreatePollActivity extends AppCompatActivity {
 	}
 
 	public void placeAction(View view) {
-//activityforResult
+		Intent intent = new Intent(this, SelectAPlaceActivity.class);
+		startActivityForResult(intent, 0);
 	}
 
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
 
+		if (resultCode != Activity.RESULT_OK) {
+			return;
+		}
 
+		binding.place.setText(data.getStringExtra(SelectAPlaceActivity.PLACE_NAME));
+	}
 }
