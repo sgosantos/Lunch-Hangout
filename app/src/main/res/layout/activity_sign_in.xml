@@ -53,16 +53,17 @@
 			android:layout_marginBottom="24dp">
 			<com.xwray.passwordview.PasswordView
 				android:id="@+id/password"
-				android:text="test"
 				android:layout_width="match_parent"
 				android:layout_height="48dp"
 				android:maxLines="1"
+				android:text="test"
 				android:inputType="textPassword"
 				android:textSize="16sp"
 				android:hint="Password"/>
 		</android.support.design.widget.TextInputLayout>
 
 		<Button
+			android:id="@+id/login"
 			android:layout_width="match_parent"
 			android:layout_height="60dp"
 			android:backgroundTint="@color/colorAccent"

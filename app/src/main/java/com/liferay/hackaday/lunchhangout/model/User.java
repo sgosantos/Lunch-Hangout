@@ -5,8 +5,8 @@ package com.liferay.hackaday.lunchhangout.model;
  */
 public class User {
 
+	public long id;
 	public String email;
-	public String password;
 	public String name;
 
 }

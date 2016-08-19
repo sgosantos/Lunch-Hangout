@@ -61,7 +61,7 @@ public class SelectAPlaceActivity extends AppCompatActivity
 
 		binding.recyclerView.setAdapter(adapter);
 
-		Call<List<Place>> call = LunchHangoutService.getInstance().restaurants();
+		Call<List<Place>> call = LunchHangoutService.getInstance().getRestaurants();
 
 		call.enqueue(new Callback<List<Place>>() {
 			@Override
