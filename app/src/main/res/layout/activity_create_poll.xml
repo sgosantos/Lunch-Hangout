@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+		<variable name="presenter" type="com.liferay.hackaday.lunchhangout.CreatePollActivity"/>
+	</data>
+	<android.support.design.widget.CoordinatorLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<android.support.design.widget.AppBarLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<android.support.v7.widget.Toolbar
+				android:id="@+id/toolbar"
+				android:layout_width="match_parent"
+				android:layout_height="?attr/actionBarSize"
+				android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+				app:layout_scrollFlags="scroll|enterAlways"
+				app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+				<ImageView
+					android:layout_width="24dp"
+					android:layout_height="24dp"
+					android:src="@drawable/ic_close"/>
+
+				<Button
+					android:layout_width="100dp"
+					android:layout_height="40dp"
+					android:layout_gravity="right"
+					android:layout_marginRight="10dp"
+					android:background="@color/white"
+					android:text="Criar"
+					android:textColor="@color/colorPrimaryDark"/>
+
+			</android.support.v7.widget.Toolbar>
+		</android.support.design.widget.AppBarLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:onClick="@{presenter::placeAction}"
+			app:layout_behavior="@string/appbar_scrolling_view_behavior"
+			tools:context="com.liferay.hackaday.lunchhangout.CreatePollActivity">
+
+			<LinearLayout
+				android:id="@+id/place_layout"
+				android:layout_width="match_parent"
+				android:layout_height="60dp"
+				android:orientation="horizontal">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_marginLeft="5dp"
+					android:gravity="center_vertical"
+					android:text="Place :"
+					android:textAllCaps="true"
+					android:textSize="18sp"/>
+
+				<TextView
+					android:id="@+id/place"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_marginLeft="10dp"
+					android:gravity="center_vertical"
+					android:text="Parraxaxa - Casa forte"
+					android:textSize="20sp"/>
+
+			</LinearLayout>
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="@color/colorPrimaryDark"/>
+
+			<LinearLayout
+				android:id="@+id/time_layout"
+				android:layout_width="match_parent"
+				android:layout_height="60dp"
+				android:orientation="horizontal">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_marginLeft="5dp"
+					android:gravity="center_vertical"
+					android:text="Horário :"
+					android:textAllCaps="true"
+					android:textSize="18sp"/>
+
+				<Spinner
+					android:id="@+id/timeSpinner"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"/>
+
+			</LinearLayout>
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="@color/colorPrimaryDark"/>
+
+
+			<LinearLayout
+				android:id="@+id/confirm_layout"
+				android:layout_width="match_parent"
+				android:layout_height="60dp"
+				android:orientation="horizontal">
+
+				<android.support.v7.widget.AppCompatCheckBox
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:text="I wanna go to this hangout"
+					android:textAllCaps="true"/>
+
+
+			</LinearLayout>
+
+
+		</LinearLayout>
+	</android.support.design.widget.CoordinatorLayout>
+</layout>
