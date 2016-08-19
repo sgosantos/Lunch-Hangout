@@ -21,7 +21,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.widget.Toast;
 
-import com.liferay.hackaday.lunchhangout.adapter.PlacesAdapter;
+import com.liferay.hackaday.lunchhangout.adapter.PlaceAdapter;
 import com.liferay.hackaday.lunchhangout.databinding.ActivitySelectAPlaceBinding;
 import com.liferay.hackaday.lunchhangout.listener.OnPlaceClickListener;
 import com.liferay.hackaday.lunchhangout.model.Place;
@@ -40,7 +40,7 @@ public class SelectAPlaceActivity extends AppCompatActivity
 	implements OnPlaceClickListener {
 
 	private ActivitySelectAPlaceBinding binding;
-	private PlacesAdapter adapter;
+	private PlaceAdapter adapter;
 
 	public static final String PLACE_NAME = "name";
 
@@ -57,7 +57,7 @@ public class SelectAPlaceActivity extends AppCompatActivity
 		binding.recyclerView.setHasFixedSize(true);
 		binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-		adapter = new PlacesAdapter(this, this);
+		adapter = new PlaceAdapter(this, this);
 
 		binding.recyclerView.setAdapter(adapter);
 

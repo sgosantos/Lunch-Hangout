@@ -30,13 +30,13 @@ import java.util.List;
 /**
  * @author Allan Melo
  */
-public class PlacesAdapter extends RecyclerView.Adapter {
+public class PeopleAdapter extends RecyclerView.Adapter {
 
-	public PlacesAdapter(Activity activity, OnPlaceClickListener listener) {
+	public PeopleAdapter(Activity activity) {
 		entries = new ArrayList<>();
 
 		delegatesManager = new AdapterDelegatesManager<>();
-		delegatesManager.addDelegate(new PlaceDelegate(activity, listener));
+		delegatesManager.addDelegate(new PeopleDelegate(activity));
 	}
 
 	public void addOnBottom(List newEntries) {

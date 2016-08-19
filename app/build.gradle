@@ -25,14 +25,10 @@ android {
 }
 
 
+
 dependencies {
-	compile fileTree(dir: 'libs', include: ['*.jar'])
-	compile group: 'com.android.support', name: 'design', version: "24.1.1"
-	compile 'com.android.support:appcompat-v7:24.1.1'
-	compile 'com.squareup.retrofit2:retrofit:2.1.0'
-	compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-	compile 'com.xwray:passwordview:0.1'
-	compile 'com.hannesdorfmann:adapterdelegates2:2.0.1'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile group: 'com.android.support', name: 'design', version: "24.1.1"
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile group: 'com.android.support', name: 'design', version: "24.1.1"
 
@@ -41,5 +37,10 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.xwray:passwordview:0.1'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.xwray:passwordview:0.1'
+    compile 'com.hannesdorfmann:adapterdelegates2:2.0.1'
     compile 'com.android.support:support-v4:24.1.1'
 }

@@ -99,7 +99,7 @@ public class DetailActivity extends AppCompatActivity {
 				case 0:
 					return new PollInformationFragment();
 				default:
-					return new PollInformationFragment();
+					return new PollPeopleFragment();
 
 			}
 		}
