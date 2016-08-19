@@ -41,6 +41,7 @@
 			android:onClick="@{presenter::onCreateClick}"
 			android:src="@drawable/ic_plus"
 			app:borderWidth="0dp"
+			app:layout_behavior="com.liferay.hackaday.lunchhangout.behavior.FloatingActionButtonScrollBehavior"
 			app:elevation="4dp"
 			app:layout_anchorGravity="bottom|right|end" />
 	</android.support.design.widget.CoordinatorLayout>
